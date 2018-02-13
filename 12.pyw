@@ -67,13 +67,32 @@ def hotstar():
 def hotstop():
         a=subprocess.Popen(['netsh','wlan','stop','hostednetwork'])
         print(a)
+def select7():
+        b1=tkinter.Button(window,text="shutdown",command=select8).pack()
+        b2=tkinter.Button(window,text="restart",command=select9).pack()
+        b3=tkinter.Button(window,text="logoff",command=select10).pack()
+        b4=tkinter.Button(window,text="remote shutdown",command=select11).pack()
+        b5=tkinter.Button(window,text="abort shutdown",command=select12).pack()
+def select8():
+        s=subprocess.Popen(['shutdown/s'],shell=True,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
+def select9():
+        s=subprocess.Popen(['shutdown/r'],shell=True,shstdin=subprocess.PIPE,stdout=subprocess.PIPE)
+def select10():
+        s=subprocess.Popen(['shutdown/l'],shell=True,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
+def select11():
+        s=subprocess.Popen(['shutdown/i'],shell=True,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
+def select12():
+        s=subprocess.Popen(['shutdown/a'],shell=True,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
 window=tkinter.Tk()
 window.title("cmd gui")
+scrollbar=Scrollbar(window)
+scrollbar.pack(side=RIGHT,fill=Y)
 menubar=Menu(window)
 filemenu=Menu(menubar,tearoff=0)
 filemenu.add_command(label="ping",command=select)
 filemenu.add_command(label="ipconfig",command=select2)
-filemenu.add_cascade(label="Hotspot",command=select4)
+filemenu.add_command(label="Hotspot",command=select4)
+filemenu.add_command(label="shutdown",command=select7)
 menubar.add_cascade(label="commands",menu=filemenu)
 aboutmenu=Menu(menubar,tearoff=0)
 aboutmenu.add_command(label="about",command=about)
