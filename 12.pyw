@@ -73,7 +73,7 @@ def select7():
         b3=tkinter.Button(window,text="logoff",command=select10).pack()
         b4=tkinter.Button(window,text="remote shutdown",command=select11).pack()
         b5=tkinter.Button(window,text="abort shutdown",command=select12).pack()
-        b6=tkinter.button(window,text="immediate shutdown",fg="red",command=select13).pack()
+        b6=tkinter.Button(window,text="immediate shutdown",fg="red",command=select13).pack()
 def select8():
         s=subprocess.Popen(['shutdown/s'],shell=True,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
 def select9():
