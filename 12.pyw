@@ -74,6 +74,7 @@ def select7():
         b4=tkinter.Button(window,text="remote shutdown",command=select11).pack()
         b5=tkinter.Button(window,text="abort shutdown",command=select12).pack()
         b6=tkinter.Button(window,text="immediate shutdown",fg="red",command=select13).pack()
+        b7=tkinter.Button(window,text="Hibernate",command=select14).pack()
 def select8():
         s=subprocess.Popen(['shutdown/s'],shell=True,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
 def select9():
@@ -85,7 +86,9 @@ def select11():
 def select12():
         s=subprocess.Popen(['shutdown/a'],shell=True,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
 def select13():
-        s=subprocess.Popen(['shutdown/p'],shell=True,stdin=subprocess.PIPE,stdout=subprocess.PIPE)     
+        s=subprocess.Popen(['shutdown/p'],shell=True,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
+def select14():
+         s=subprocess.Popen(['shutdown/h'],shell=True,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
 window=tkinter.Tk()
 window.title("cmd gui")
 scrollbar=Scrollbar(window)
