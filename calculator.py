@@ -15,7 +15,8 @@ def calculate():
 	f=Entry.get(c)
 	g=str(f)
 	i=eval(g)
-	h.config(text=i,font="Helvetica 22 italic",fg="green")
+	h.config(text=i,font="Helvetica 33 italic",fg="green")
+	window.after(3500,calculate)
 def clear():
 	c.delete(0,END)
 	h.config(text="")
@@ -30,7 +31,7 @@ d=tkinter.Button(text="calculate",font="Times 15 bold",fg="green",command=calcul
 e=tkinter.Button(text="Clear",font="Times 15 bold",fg="green",command=clear)
 b2=tkinter.Button(text="quit",command=quit,font="Times 15 bold",fg="red")
 h=tkinter.Label(text="")
-c.pack()
+c.pack(ipady=5)
 h.pack()
 d.pack(padx=30,pady=20,side=LEFT)
 e.pack(padx=80,pady=20,side=LEFT)
@@ -41,3 +42,5 @@ l=tkinter.Label(text="")
 l.pack()
 tick()
 window.mainloop()
+
+
