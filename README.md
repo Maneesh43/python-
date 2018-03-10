@@ -1,2 +1,3 @@
 # python
-simple python gui application for command prompt commands 
+Projects using tkinter library
+
