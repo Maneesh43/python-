@@ -28,7 +28,7 @@ def about():
         lab1.pack()
         lab2.pack()
 def select3():
-	webbrowser.open_new_tab("Techestate1.blogspot.com")
+	webbrowser.open_new_tab("https://techestate1.blogspot.in")
 def select4():
         l=tkinter.Label(window,text="would you like to create a new hotspot or continue with exixting one")
         l.pack()
