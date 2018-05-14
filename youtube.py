@@ -1,6 +1,8 @@
 import tkinter
 from tkinter import *
+from tkinter import ttk
 import time
+
 import pafy
 import os
 def download():
@@ -23,7 +25,7 @@ def download():
     e2=0
     e2=tkinter.Entry()
     e2.pack()
-    b5=tkinter.Button(text="ok",command=download1)
+    b5=ttk.Button(text="ok",command=download1)
     b5.pack()
     download1()
 def download1():
@@ -32,7 +34,7 @@ def download1():
     a=streams[e11].download(quiet=False,filepath='c:\\users\\maneesh\\desktop')
     print(a)
 window=tkinter.Tk()
-scrollbar=Scrollbar()
+scrollbar=ttk.Scrollbar()
 scrollbar.pack(side=RIGHT,fill=Y)
 listbox=Listbox(window,yscrollcommand=scrollbar.set)
 window.title("Youtube downloader")
@@ -43,7 +45,7 @@ l1=tkinter.Label(text="Enter the url",font="Times 11 italic",fg="green")
 l1.pack()
 e=tkinter.Entry(window)
 e.pack(ipadx=5,ipady=5)
-b=tkinter.Button(text="Download",command=download,font="Helvetica 22 italic",fg="green")
+b=ttk.Button(text="Download",command=download,font="Helvetica 22 italic",fg="green")
 b.pack()
 l2=tkinter.Label(text="")
 l2.pack()
