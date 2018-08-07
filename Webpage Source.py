@@ -1,4 +1,5 @@
-
+import os
+os.system('pip install validators')
 import threading,validators
 import tkinter
 import tkinter.scrolledtext as tstk
