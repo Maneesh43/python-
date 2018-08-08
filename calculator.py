@@ -1,5 +1,5 @@
 import tkinter,threading
-from tkinter import Entry,Button,StringVar,GROOVE,LEFT
+from tkinter import Entry,Button,StringVar,GROOVE,LEFT,END
 import time
 def tick():
              a=time.strftime('%I:%M:%S %p')
