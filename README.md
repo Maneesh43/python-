@@ -1,4 +1,4 @@
 # python
 Projects using tkinter library
-please run for once requirements.py as it nstalls all dependencies needed
+please run for once requirements.py as it installs all dependencies needed
 
