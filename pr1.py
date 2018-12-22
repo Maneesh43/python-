@@ -1,0 +1,50 @@
+import tkinter,threading
+import hashlib as h
+from tkinter import ttk
+def has1():
+    r=k.get().encode()
+    if(c.get()=="md5"):l3.config(text="Hash is :"+h.md5(r).hexdigest(),font="Helvetica 12 italic",fg="green")
+    elif(c.get()=="sha224"):l3.config(text=h.sha224(r).hexdigest(),font="Helvetica 12 italic",fg="green")
+    elif(c.get()=="sha1"):l3.config(text=h.sha1(r).hexdigest(),font="Helvetica 12 italic",fg="green")
+    elif(c.get()=="blake2b"):l3.config(text=h.blake2b(r).hexdigest(),font="Helvetica 12 italic",fg="green")
+    elif(c.get()=="sha384"):l3.config(text=h.sha384(r).hexdigest(),font="Helvetica 12 italic",fg="green")
+    elif(c.get()=="sha3_512"):l3.config(text=h.sha3_512(r).hexdigest(),font="Helvetica 12 italic",fg="green")
+    elif(c.get()=="sha3_256"):l3.config(text=h.sha3_256(r).hexdigest(),font="Helvetica 12 italic",fg="green")
+    elif(c.get()=="shake_256"):l3.config(text=h.shake_256(r).hexdigest(),font="Helvetica 12 italic",fg="green")
+    elif(c.get()=="sha3_224"):l3.config(text=h.sha3_224(r).hexdigest(),font="Helvetica 12 italic",fg="green")
+    elif(c.get()=="sha512"):l3.config(text=h.sha512(r).hexdigest(),font="Helvetica 12 italic",fg="green")
+    elif(c.get()=="blake2s"):l3.config(text=h.blake2s(r).hexdigest(),font="Helvetica 12 italic",fg="green")
+    elif(c.get()=="shake_128"):l3.config(text=h.shake_128(r).hexdigest(),font="Helvetica 12 italic",fg="green")
+    elif(c.get()=="sha3_384"):l3.config(text=h.sha3_384(r).hexdigest(),font="Helvetica 12 italic",fg="green")
+    elif(c.get()=="sha256"):l3.config(text=h.sha256(r).hexdigest(),font="Helvetica 12 italic",fg="green")
+    else:pass
+def men(event):
+    global r
+    l.config(text="Hashing Using"+"  "+c.get(),font="Helvetica 13 bold",fg="red")
+    #t1=threading.Thread(target=has1())
+    #t1.start()
+    has1()
+def main12():
+    global c,k,l1,l3
+    k=tkinter.StringVar()
+    c=ttk.Combobox(win,values=list(h.algorithms_guaranteed))
+    c.current(0)
+    print(h.algorithms_available)
+    c.bind("<<ComboboxSelected>>",men)
+    c.pack()
+    l2=tkinter.Label(text="Enter your data here to hash",font="Helevetica 15 italic",fg="blue").pack()
+    e=tkinter.Entry(win,textvariable=k)
+    e.pack()
+    l1=tkinter.Label(text='')
+    l1.pack()
+    l3=tkinter.Label(text='')
+    l3.pack()
+win=tkinter.Tk()
+win.title("Hashing")
+l=tkinter.Label(text='')
+l.pack()
+t1=threading.Thread(target=main12())
+t1.start()
+b=ttk.Button(text="Hash",command=has1)
+b.pack()
+win.mainloop()
