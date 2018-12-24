@@ -1,4 +1,4 @@
-import tkinter,threading,os
+import tkinter,threading
 import hashlib as h
 from tkinter import ttk,filedialog
 def md5f():
